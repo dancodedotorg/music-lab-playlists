@@ -16,8 +16,12 @@ const App = () => {
     const [showLoadModal, setShowLoadModal] = useState(false);
 
     // Regular expression to validate and extract the channel ID from the Code.org project URL
-    // It looks for the pattern: https://studio.code.org/projects/music/{channelID}/edit
-    const projectUrlRegex = /^https:\/\/studio\.code.org\/projects\/music\/([a-zA-Z0-9_-]+)\/edit$/;
+    // It now accepts:
+    // - https://studio.code.org/projects/music/{channelID}/edit
+    // - https://studio.code.org/projects/music/{channelID}/view
+    // - https://studio.code.org/projects/music/{channelID}/
+    // - https://studio.code.org/projects/music/{channelID}
+    const projectUrlRegex = /^https:\/\/studio\.code\.org\/projects\/music\/([a-zA-Z0-9_-]+)(?:\/edit|\/view|\/)?$/;
 
     // Regular expression to validate and extract channel IDs from the embed URL
     // It looks for the pattern: https://studio.code.org/musiclab/embed?channels={channelID1},{channelID2}&library=
