@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 
 // Main App component for the Music Lab Playlist Generator
 const App = () => {
